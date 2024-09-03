@@ -33,11 +33,6 @@ export const MENU: MenuItem[] = [
     ]
   },
   {
-    label: 'Chat',
-    icon: 'message-square',
-    link: '/apps/chat',
-  },
-  {
     label: 'Calendar',
     icon: 'calendar',
     link: '/apps/calendar',
@@ -283,10 +278,7 @@ export const MENU: MenuItem[] = [
         label: 'Blank page',
         link: '/general/blank-page',
       },
-      {
-        label: 'Faq',
-        link: '/general/faq',
-      },
+      
       {
         label: 'Invoice',
         link: '/general/invoice',
@@ -294,10 +286,6 @@ export const MENU: MenuItem[] = [
       {
         label: 'Profile',
         link: '/general/profile',
-      },
-      {
-        label: 'Pricing',
-        link: '/general/pricing',
       },
       {
         label: 'Timeline',
