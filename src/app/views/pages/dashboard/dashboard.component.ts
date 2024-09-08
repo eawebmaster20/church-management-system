@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -37,6 +38,59 @@ export class DashboardComponent implements OnInit {
     fontFamily     : "'Roboto', Helvetica, sans-serif"
   }
 
+  public barChartData: ChartData<'bar'> = {
+    labels: [ "Cont 2", "Tithe", "Contribution", "Donation", "Offering"],
+    datasets: [
+      { 
+        label: "Population",
+        backgroundColor: [this.obj.primary, this.obj.danger, this.obj.warning, this.obj.success, this.obj.info],
+        hoverBackgroundColor: [this.obj.primary, this.obj.danger, this.obj.warning, this.obj.success, this.obj.info],
+        borderColor: [this.obj.primary, this.obj.danger, this.obj.warning, this.obj.success, this.obj.info],
+        hoverBorderColor: [this.obj.primary, this.obj.danger, this.obj.warning, this.obj.success, this.obj.info],
+        data: [2478,5267,734,2084,1433],
+      }
+    ],
+  };
+
+  public barChartOptions: ChartConfiguration['options'] = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      }
+    },
+    scales: {
+      x: {
+        display: true,
+        grid: {
+          display: true,
+          color: this.obj.gridBorder,
+          borderColor: this.obj.gridBorder,
+        },
+        ticks: {
+          color: this.obj.bodyColor,
+          font: {
+            size: 12
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: true,
+          color: this.obj.gridBorder,
+          borderColor: this.obj.gridBorder,
+        },
+        ticks: {
+          color: this.obj.bodyColor,
+          font: {
+            size: 12
+          }
+        }
+      }
+    }
+  };
+  public barChartType: ChartType = 'bar';
+  public barChartPlugins = [];
   /**
    * NgbDatepicker
    */
