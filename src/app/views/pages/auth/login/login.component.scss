@@ -4,3 +4,16 @@
   align-items: center;
   justify-content: center;
 }
+.err{
+  .err-msg{
+    font-size: small;
+    color: red;
+  }
+}
+
+.form-valid{
+  display: none;
+}
+.form-invalid{
+  display: block;
+}

@@ -37,6 +37,7 @@ FullCalendarModule.registerPlugins([
 
 // ngx-quill
 import { QuillModule } from 'ngx-quill';
+import { RegisterMemberComponent } from './register-member/register-member.component';
 
 const routes: Routes = [
   {
@@ -71,10 +72,10 @@ const routes: Routes = [
           }
         ]
       },
-      // {
-      //   path: 'chat',
-      //   component: ChatComponent
-      // },
+      {
+        path: 'members',
+        component: RegisterMemberComponent
+      },
       {
         path: 'calendar',
         component: CalendarComponent
@@ -84,7 +85,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [EmailComponent, CalendarComponent, AppsComponent, InboxComponent, ReadComponent, ComposeComponent],
+  declarations: [EmailComponent, CalendarComponent, AppsComponent, InboxComponent, ReadComponent, ComposeComponent, RegisterMemberComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
