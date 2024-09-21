@@ -41,9 +41,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.emailRegex.test(this.email)
     ? this.authSubscription = this.api.signIn({email:this.email, password:this.password}).subscribe({
       next:(value)=>{
-        console.log(value);
-        localStorage.setItem('isLoggedin', 'true')
-        this.router.navigate(['/']);
+        if (value === 'success') {
+          console.log(value);
+          localStorage.setItem('isLoggedin', 'true')
+          this.router.navigate(['/']);
+        }
       },
       error:(err)=>console.log(err),
       complete:()=>console.log('terminated')

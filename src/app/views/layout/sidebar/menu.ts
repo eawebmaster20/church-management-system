@@ -22,7 +22,7 @@ export const MENU: MenuItem[] = [
   {
     label: 'Register Member',
     icon: 'user',
-    link: '/register-member'
+    link: 'apps/register-member'
   },
   {
     label: 'Contributions',

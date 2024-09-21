@@ -19,7 +19,7 @@ import { EmailComponent } from './email/email.component';
 import { InboxComponent } from './email/inbox/inbox.component';
 import { ReadComponent } from './email/read/read.component';
 import { ComposeComponent } from './email/compose/compose.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -73,9 +73,13 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'members',
+        path: 'register-member',
         component: RegisterMemberComponent
       },
+      // {
+      //   path: 'members',
+      //   component: RegisterMemberComponent
+      // },
       {
         path: 'calendar',
         component: CalendarComponent
@@ -90,6 +94,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
+    ReactiveFormsModule,
     FullCalendarModule, // import the FullCalendar module! will make the FullCalendar component available
     PerfectScrollbarModule,
     NgbDropdownModule,
