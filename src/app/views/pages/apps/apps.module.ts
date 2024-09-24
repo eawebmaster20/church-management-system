@@ -19,7 +19,7 @@ import { EmailComponent } from './email/email.component';
 import { InboxComponent } from './email/inbox/inbox.component';
 import { ReadComponent } from './email/read/read.component';
 import { ComposeComponent } from './email/compose/compose.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -37,6 +37,7 @@ FullCalendarModule.registerPlugins([
 
 // ngx-quill
 import { QuillModule } from 'ngx-quill';
+import { RegisterMemberComponent } from './register-member/register-member.component';
 
 const routes: Routes = [
   {
@@ -71,9 +72,13 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'register-member',
+        component: RegisterMemberComponent
+      },
       // {
-      //   path: 'chat',
-      //   component: ChatComponent
+      //   path: 'members',
+      //   component: RegisterMemberComponent
       // },
       {
         path: 'calendar',
@@ -84,11 +89,12 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [EmailComponent, CalendarComponent, AppsComponent, InboxComponent, ReadComponent, ComposeComponent],
+  declarations: [EmailComponent, CalendarComponent, AppsComponent, InboxComponent, ReadComponent, ComposeComponent, RegisterMemberComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
+    ReactiveFormsModule,
     FullCalendarModule, // import the FullCalendar module! will make the FullCalendar component available
     PerfectScrollbarModule,
     NgbDropdownModule,
