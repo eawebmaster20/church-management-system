@@ -36,8 +36,8 @@ export class RegisterMemberComponent implements OnInit {
     });
   }
   submitForm(): void {
+    console.log(this.registrationForm.value);
     if (this.registrationForm.valid) {
-      console.log(this.registrationForm.value);
     } else {
       console.log('Form is invalid');
     }

@@ -75,21 +75,21 @@
             </div>
           </div>
           <div class="row mb-3">
-            <div class="col-sm-6">
+            <div  *ngIf="registrationForm.value.maritalStatus === 'married'" class="col-sm-6">
               <label class="form-label">Search Spouse</label>
               <ng-select [items]="people" bindLabel="name" formControlName="spouse" placeholder="Type to search"></ng-select>
             </div>
-            <div class="col-sm-6">
+            <div *ngIf="registrationForm.value.childrenStatus === 'yes'" class="col-sm-6">
               <label class="form-label">Search Children</label>
               <ng-select [items]="people" [multiple]="true" formControlName="children" placeholder="Select children"></ng-select>
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-6 d-flex spacer">
+            <div  *ngIf="registrationForm.value.maritalStatus === 'married'"  class="col-sm-6 d-flex spacer">
               <input type="checkbox" class="form-check-input" formControlName="spouseNotMember">
               <label class="form-check-label">Click here if Spouse is not a member</label>
             </div>
-            <div class="col-sm-6 d-flex spacer">
+            <div  *ngIf="registrationForm.value.childrenStatus === 'yes'"  class="col-sm-6 d-flex spacer">
               <input type="checkbox" class="form-check-input" formControlName="childrenNotMember">
               <label class="form-check-label">Click here if Child is not a member</label>
             </div>
